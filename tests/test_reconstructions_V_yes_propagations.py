@@ -1,7 +1,7 @@
 import sys
 sys.path.insert(0,'..')
 from pyscf import gto, scf, mcscf, grad, ao2mo, fci
-import ezACSE, itertools
+import ACSE, itertools
 import numpy as np
 import pytest
 np.set_printoptions(threshold=sys.maxsize)
@@ -31,7 +31,7 @@ def test_reconstructions_with_active_propagation_FullD3_FullD2():
     mc.kernel()
 
     print("FullD3")
-    acse = ezACSE.acse(mc)
+    acse = ACSE.acse(mc)
     acse.max_iter = max_iter
     acse.ActiveRotations = active_rotations
     acse.reconstruction = reconstruction
@@ -44,7 +44,7 @@ def test_reconstructions_with_active_propagation_FullD3_FullD2():
     acse = None
 
     print("FullD2")
-    acse = ezACSE.acse(mc)
+    acse = ACSE.acse(mc)
     acse.max_iter = max_iter
     acse.ActiveRotations = active_rotations
     acse.reconstruction = reconstruction
@@ -56,7 +56,7 @@ def test_reconstructions_with_active_propagation_FullD3_FullD2():
     assert FullD2_e == pytest.approx(FullD3_e,1e-9)
 
     #print("BlockedD2Simplified")
-    #acse = ezACSE.acse(mc)
+    #acse = ACSE.acse(mc)
     #acse.max_iter = max_iter
     #acse.datatype = np.float64
     #acse.ActiveRotations = active_rotations
@@ -88,7 +88,7 @@ def test_reconstructions_with_active_propagation_FullD2_BlockedD2Simplified():
     mc.kernel()
 
     print("FullD2")
-    acse = ezACSE.acse(mc)
+    acse = ACSE.acse(mc)
     acse.max_iter = max_iter
     acse.datatype = np.float64
     acse.ActiveRotations = active_rotations
@@ -102,7 +102,7 @@ def test_reconstructions_with_active_propagation_FullD2_BlockedD2Simplified():
     acse = None
 
     print("BlockedD2Simplified")
-    acse = ezACSE.acse(mc)
+    acse = ACSE.acse(mc)
     acse.max_iter = max_iter
     acse.datatype = np.float64
     acse.ActiveRotations = active_rotations
@@ -136,7 +136,7 @@ def test_reconstructions_with_active_propagation_BlockedD2Simplified_BlockedD2Si
     mc.kernel()
 
     print("BlockedD2Simplified")
-    acse = ezACSE.acse(mc)
+    acse = ACSE.acse(mc)
     acse.max_iter = max_iter
     acse.datatype = np.float64
     acse.ActiveRotations = active_rotations
@@ -150,7 +150,7 @@ def test_reconstructions_with_active_propagation_BlockedD2Simplified_BlockedD2Si
     acse = None
 
     print("BlockedD2Simplified Singlet")
-    acse = ezACSE.acse(mc)
+    acse = ACSE.acse(mc)
     acse.max_iter = max_iter
     acse.datatype = np.float64
     acse.ActiveRotations = active_rotations
