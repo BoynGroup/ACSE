@@ -1,5 +1,4 @@
 import sys
-sys.path.insert(0,'..')
 from pyscf import gto, scf, mcscf, grad, ao2mo, fci
 import ACSE, itertools
 import numpy as np

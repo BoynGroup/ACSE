@@ -1,7 +1,7 @@
 # A.W. Schlimgen & D.P. Gibney 4/2025
 
 import numpy as np
-import acseTools # TODO decide what goes in tools, if anything
+from ACSE import acseTools # TODO decide what goes in tools, if anything
 #from acseTools import timing
 #from openfermion.linalg import wedge
 from functools import reduce
@@ -202,8 +202,8 @@ class acse():
         BlockedD2Simplified'''
 
         if math == "FullD3":
-            from D2 import make_fullD2, make_fullK2, get_energy_fullD2, get_acse_residual_full
-            from D3 import reconstruct_fullD3
+            from ACSE.D2 import make_fullD2, make_fullK2, get_energy_fullD2, get_acse_residual_full
+            from ACSE.D3 import reconstruct_fullD3
             def residual(D1,D2,K2):
                 fullD1 = np.zeros((2*self.r,2*self.r),dtype=D1[0].dtype)
                 fullD1[0:self.r,0:self.r] += D1[0]
@@ -239,7 +239,7 @@ class acse():
             self.get_update = update
 
         elif math == "FullD2":
-            from D2 import make_fullD2, make_fullK2, get_acse_residual_full_no_D3
+            from ACSE.D2 import make_fullD2, make_fullK2, get_acse_residual_full_no_D3
             def residual(D1,D2,K2):
                 fullD1 = np.zeros((2*self.r,2*self.r),dtype=D1[0].dtype)
                 fullD1[0:self.r,0:self.r] += D1[0]
@@ -269,7 +269,7 @@ class acse():
         elif math == "BlockedD2Simplified":
             if self.singlet == False:
                 print("Not Singlet")
-                from D2 import get_acse_residual_blocks_no_D3
+                from ACSE.D2 import get_acse_residual_blocks_no_D3
                 def residual(D1,D2,M):
                     return get_acse_residual_blocks_no_D3(D1,D2,M,self.nelecas,self.mc.ncore,reconstruction=self.reconstruction)
                 self.get_residual = residual
@@ -278,7 +278,7 @@ class acse():
                 self.get_update = update
             else:
                 print("Singlet")
-                from D2 import get_acse_residual_blocks_no_D3_singlet
+                from ACSE.D2 import get_acse_residual_blocks_no_D3_singlet
                 def residual(D1,D2,M):
                     return get_acse_residual_blocks_no_D3_singlet(D1,D2,M,self.nelecas,self.mc.ncore,reconstruction=self.reconstruction)
                 self.get_residual = residual
@@ -287,7 +287,7 @@ class acse():
                 self.get_update = update
 
     def kernel(self):
-        from D2 import get_energy_blockD2
+        from ACSE.D2 import get_energy_blockD2
         r = self.r
         K2 = self.make_K2()
         K2 = (K2 + K2.transpose(1,0,3,2) + K2.transpose(2,3,0,1) + K2.transpose(3,2,1,0))/4

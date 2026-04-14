@@ -1,0 +1,19 @@
+[project]
+name = "ACSE"
+version = "1.0.0"
+description = "A Python/PySCF implimentation of the Anti-Hermitian Contracted Schrodinger equation (ACSE)"
+readme = "README.md"
+authors = [
+    { name = "Jan-Niklas (Nik) Boyn", email = "jboyn@umn.edu"},
+    { name = "Daniel Gibney"},
+]
+requires-python = ">=3.10"
+dependencies = [
+    "pyscf",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+]
+
