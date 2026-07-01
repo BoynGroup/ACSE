@@ -1,6 +1,12 @@
 # A Python/PySCF implimentation of the Anti-Hermitian Contracted Schrodinger equation (ACSE)
-Solves the ACSE in a spin blocked representation using either the Valdemoro (V) or Nakatsuji-Yasuda (NY) reconstructions of the 3-RDM. 
+Solves the ACSE in a spin blocked representation using either the Valdemoro (V) or Nakatsuji-Yasuda (NY) reconstructions of the 3-RDM.
 
+# Installation
+create python virtual environment and activate it
+python -m venv .venv
+source .venv/bin/activate
+install ACSE and dependencies
+python -m pip install -e ACSE/Location
 
 **Norms**
 ```math
