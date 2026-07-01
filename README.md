@@ -76,3 +76,6 @@ Tr({}^1D_{a})  &= N_a/1!        \\
 Tr({}^1D_{b})  &= N_b/1!         \\
 \end{align}
 ```
+
+### Publications
+[Initial publication](https://arxiv.org/pdf/2604.02550)
