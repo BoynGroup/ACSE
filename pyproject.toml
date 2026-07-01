@@ -6,6 +6,7 @@ readme = "README.md"
 authors = [
     { name = "Jan-Niklas (Nik) Boyn", email = "jboyn@umn.edu"},
     { name = "Daniel Gibney"},
+    { name = "Anthony Schlimgen"},
 ]
 requires-python = ">=3.10"
 dependencies = [
