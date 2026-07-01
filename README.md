@@ -4,28 +4,22 @@ Solves the ACSE in a spin blocked representation using either the Valdemoro (V) 
 ### Installation
 1. **Clone Repo**
 ```bash
-```
 git clone https://github.com/BoynGroup/ACSE.git
 cd ACSE
 ```
 
-```
 2. **Create Python Virtual Environment and Activate it**
 ```bash
-```
 python -m venv .venv
 source .venv/bin/activate
 ```
 
-```
 3. **Install ACSE**
 ```bash
-```
 install ACSE and dependencies
 python -m pip install -e ACSE/Location
 ```
 
-```
 **Norms**
 ```math
 \begin{align}
