@@ -1,6 +1,21 @@
 # A Python/PySCF implimentation of the Anti-Hermitian Contracted Schrodinger equation (ACSE)
 Solves the ACSE in a spin blocked representation using either the Valdemoro (V) or Nakatsuji-Yasuda (NY) reconstructions of the 3-RDM.
 
+### 3rdm cumulant decomposition
+```math
+{}^3D = (3^2\Delta + ({}^1D \wedge {}^1D)) \ wedge {}^1D + {}^3\Delta
+```
+
+### Valdemoro (V)
+```math
+{}^3\Delta = 0
+```
+
+### Nakatsuji-Yasuda
+```math
+{}^3\Delta^{ijp}_{rql} = \frac{1}{6}\sum_{a}\sigma_a\hat{A}
+```
+
 ### Installation
 1. **Clone Repo**
 ```bash
@@ -19,6 +34,8 @@ source .venv/bin/activate
 install ACSE and dependencies
 python -m pip install -e ACSE/Location
 ```
+
+### Usage
 
 **Norms**
 ```math
