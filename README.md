@@ -66,7 +66,7 @@ acse.singlet = False #Speeds up BlockedD2Simplified for singlet systems
 acse.kernel()
 ```
 
-**Norms**
+**RDM Normalizations**
 ```math
 \begin{align}
 Tr({}^2D_{aa}) &= N_a(N_a-1)/2!\\
