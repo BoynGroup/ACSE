@@ -2,7 +2,7 @@ import numpy as np
 import scipy
 
 def reconstruct_fullD3(fullD1,fullD2,N,nelecas,ncore,reconstruction='V'):
-   '''Creates fullD3 matrix
+    '''Creates fullD3 matrix
    
       Args:
            fullD1: D1 matrix in the spin orbital basis (2r,2r)
@@ -13,7 +13,7 @@ def reconstruct_fullD3(fullD1,fullD2,N,nelecas,ncore,reconstruction='V'):
            reconstruction: Which reconstruction to perform (V,NY)
       Returns:
            fullD3 in the spin representation (2r,2r,2r,2r,2r,2r) where r is the number of spatial orbitals
-   '''
+    '''
     r = fullD1.shape[0]//2
     nelecas = (nelecas[0]+ncore,nelecas[1]+ncore)
 
